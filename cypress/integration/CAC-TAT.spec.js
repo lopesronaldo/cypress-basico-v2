@@ -124,15 +124,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {  ///DESCRIBE = FE
             .should('not.be.checked')
     })
 
-    it('demo upload de arquivo direto do PC', function(){
-        cy.get('input[type="file"]')
-            .should('not.have.value')
-            .selectFile('C:/Users/BLITE TI/Documents/LM Auto/WhiteLabel/CNH/CREDITO APROVADO/Breno Henrique da Mata.jpg')    ///NO CAMINHO DO ARQUIVO, UTILIZAR A BARRA NORMAL '/'
-            .should(function($input){
-                expect($input[0].files[0].name).to.equal('Breno Henrique da Mata.jpg')
-        }) 
-    })
-
     it('seleciona um arquivo da pasta fixtures', function(){    ///upload através de clicar
         cy.get('input[type="file"]')      
             .should('not.have.value')            ///validar que nenhum arquivo foi carregado, ou sejam, não tem nenhum valor
